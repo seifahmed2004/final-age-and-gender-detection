@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  age-gender-app:
+    build: .
+    container_name: age_gender_streamlit_app
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./snapshots:/app/snapshots
+      - ./data:/app/data
+      - ./models:/app/models
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped

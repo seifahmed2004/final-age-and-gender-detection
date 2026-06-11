@@ -1,0 +1,11 @@
+streamlit
+torch
+torchvision
+torchaudio
+timm
+ultralytics
+opencv-python
+pillow
+pandas
+plotly
+numpy
