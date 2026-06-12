@@ -59,7 +59,6 @@ div.stButton > button {
 /* Stack columns on narrow screens */
 @media (max-width: 640px) {
     [data-testid="column"] { min-width: 100% !important; flex: 1 1 100% !important; }
-    [data-testid="stSidebar"] { display: none; }
 }
 
 /* Metric cards */
