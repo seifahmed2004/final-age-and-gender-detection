@@ -12,4 +12,5 @@ services:
       - ./models:/app/models
     environment:
       - PYTHONUNBUFFERED=1
+      - ADMIN_PASSWORD=12345678
     restart: unless-stopped

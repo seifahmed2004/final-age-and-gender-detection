@@ -1,8 +1,26 @@
 import sqlite3
 from datetime import datetime
+import streamlit as st
+import os
 
 DB_PATH = "predictions.db"
 
+
+ADMIN_PASSWORD = os.environ.get("ADMIN_PASSWORD", "12345678")
+
+def check_admin():
+    if "is_admin" not in st.session_state:
+        st.session_state.is_admin = False
+
+    if not st.session_state.is_admin:
+        pwd = st.text_input("Enter admin password to view database", type="password")
+        if st.button("Login"):
+            if pwd == ADMIN_PASSWORD:
+                st.session_state.is_admin = True
+                st.rerun()
+            else:
+                st.error("Wrong password")
+        st.stop()  # stops rendering the rest of the page
 
 def init_db():
     conn = sqlite3.connect(DB_PATH)
