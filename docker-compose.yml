@@ -12,6 +12,6 @@ services:
       - ./models:/app/models
     environment:
       - PYTHONUNBUFFERED=1
-      - ADMIN_EMAIL=your@email.com
+      - ADMIN_EMAIL=s-seif.sayed@zewailcity.edu.eg
       - ADMIN_PASSWORD=12345678
     restart: unless-stopped
